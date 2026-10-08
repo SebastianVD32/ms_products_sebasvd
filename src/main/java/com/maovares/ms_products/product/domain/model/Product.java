@@ -1,8 +1,5 @@
 package com.maovares.ms_products.product.domain.model;
 
-import lombok.Data;
-
-@Data
 public class Product {
     private final String id;
     private final double price;
@@ -16,5 +13,25 @@ public class Product {
         this.description = description;
         this.image = image;
         this.title = title;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public String getTitle() {
+        return title;
     }
 }

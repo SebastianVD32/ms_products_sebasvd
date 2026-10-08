@@ -2,6 +2,8 @@ package com.maovares.ms_products.product.infraestructure.web;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -29,13 +31,11 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import lombok.extern.slf4j.Slf4j;
-
 @Tag(name = "Products", description = "API for product management")
 @RestController
 @RequestMapping("/v1/products")
-@Slf4j
 public class ProductController {
+        private static final Logger log = LoggerFactory.getLogger(ProductController.class);
         private final GetProductsQuery getProductsQuery;
         private final GetProductQuery getProductQuery;
         private final CreateProductCommand createProductCommand;

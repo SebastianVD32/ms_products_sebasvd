@@ -3,6 +3,8 @@ package com.maovares.ms_products.product.infraestructure.persistence.mongo;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -14,12 +16,10 @@ import org.springframework.stereotype.Repository;
 import com.maovares.ms_products.product.application.port.out.ProductRepository;
 import com.maovares.ms_products.product.domain.model.Product;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @Repository
 public class ProductMongoAdapter implements ProductRepository {
 
+        private static final Logger log = LoggerFactory.getLogger(ProductMongoAdapter.class);
         private final MongoTemplate mongoTemplate;
 
         public ProductMongoAdapter(MongoTemplate mongoTemplate) {

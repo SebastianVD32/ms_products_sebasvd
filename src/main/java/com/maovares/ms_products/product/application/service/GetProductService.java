@@ -1,5 +1,7 @@
 package com.maovares.ms_products.product.application.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.maovares.ms_products.product.application.port.in.GetProductQuery;
@@ -7,12 +9,10 @@ import com.maovares.ms_products.product.application.port.out.ProductRepository;
 import com.maovares.ms_products.product.domain.exception.ProductNotFoundException;
 import com.maovares.ms_products.product.domain.model.Product;
 
-import lombok.extern.slf4j.Slf4j;
-
 @Service
-@Slf4j
 public class GetProductService implements GetProductQuery {
 
+    private static final Logger log = LoggerFactory.getLogger(GetProductService.class);
     private final ProductRepository productRepository;
 
     public GetProductService(ProductRepository productRepository) {
